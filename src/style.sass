@@ -2,60 +2,60 @@ body
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
 	font-size: 14px
 	color: #333
-.container
-	margin-left: auto
-	margin-right: auto
-	width: 600px
-#board
-	margin-left: auto
-	margin-right: auto
-	width: 500px
-	height: 500px
-	background-color: black
+	.container
+		margin-left: auto
+		margin-right: auto
+		width: 600px
+		#board
+			margin-left: auto
+			margin-right: auto
+			width: 500px
+			height: 500px
+			background-color: black
 
-	.shelf
-		width: 100%
-		height: 25%
+			.shelf
+				width: 100%
+				height: 25%
 
-		.cell
-			width: 25%
-			height: 100%
-			background-color: #555
-			float: left
-			cursor: pointer
+				.cell
+					width: 25%
+					height: 100%
+					background-color: #555
+					float: left
+					cursor: pointer
+					text-align: center
+					-webkit-transition: 0.2s
+					transition: 0.2s
+					opacity: 0.9
+					color: white
+					line-height: 125px
+					font-size: 6em
+
+					&:hover
+						opacity: 1
+						background-color: #777
+					&.active
+						background-color: #0C0
+		#controls, #result
+			margin-left: 20px
+		#controls
+			display: inline-block
+			width: 100%
+			margin-top: 20px
+
+			#try, #letters
+				float: left
+			#try
+				cursor: pointer
+				padding: 10px
+				background-color: #DDD
+				border-radius: 4px
+			#letters
+				margin-left: 20px
+				font-size: 30px
+			#score
+				float: right
+				font-size: 30px
+		#result
+			clear: both
 			text-align: center
-			-webkit-transition: 0.2s
-			transition: 0.2s
-			opacity: 0.9
-			color: white
-			line-height: 125px
-			font-size: 6em
-
-			&:hover
-				opacity: 1
-				background-color: #777
-			&.active
-				background-color: #0C0
-#controls, #result
-	margin-left: 20px
-#controls
-	display: inline-block
-	width: 100%
-	margin-top: 20px
-
-	#try, #letters
-		float: left
-	#try
-		cursor: pointer
-		padding: 10px
-		background-color: #DDD
-		border-radius: 4px
-	#letters
-		margin-left: 20px
-		font-size: 30px
-	#score
-		float: right
-		font-size: 30px
-#result
-	clear: both
-	text-align: center

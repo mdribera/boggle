@@ -21,7 +21,7 @@ $(document).ready(function() {
 	}
 
 	//load all possible words
-	$.getJSON('words.json', function(data) {
+	$.getJSON('data/words.json', function(data) {
 		for(item in data) {
 			words.push(data[item]['word']);
 		}
