@@ -6,13 +6,13 @@ $(document).ready(function() {
 	score = 0;
 
 	//populate the cells with configuration one or two
-	var config1 = ['S', 'E', 'R', 'S', 'P', 'A', 'T', 'G', 'L', 'I', 'N', 'E', 'S', 'E', 'R', 'S'],
-	config2     = ['G', 'R', 'E', 'P', 'T', 'N', 'A', 'L', 'E', 'S', 'I', 'T', 'D', 'R', 'E', 'S'];
-	if(Math.floor(Math.random()*2)){
-		populate(config1);
-	} else {
-		populate(config2);
-	}
+	var combinations = [['S', 'E', 'R', 'S', 'P', 'A', 'T', 'G', 'L', 'I', 'N', 'E', 'S', 'E', 'R', 'S'],
+	['G', 'R', 'E', 'P', 'T', 'N', 'A', 'L', 'E', 'S', 'I', 'T', 'D', 'R', 'E', 'S'],
+	['p', 'l', 's', 't', 'e', 'a', 'i', 'e', 'r', 't', 'n', 'r', 's', 'g', 'e', 's'],
+	['a', 'r', 'e', 's', 's', 't', 'a', 'p', 'e', 'n', 'i', 'l', 'd', 'r', 'e', 's'],
+	['p', 'e', 'r', 's', 'l', 'a', 't', 'g', 's', 'i', 'n', 'e', 't', 'e', 'r', 's']];
+	var random = Math.floor(Math.random()*5);
+	populate(combinations[random])
 
 	function populate(data) {
 		for(let in data) {
@@ -37,6 +37,12 @@ $(document).ready(function() {
 		checkWord();
 	});
 
+	$(document).keypress(function(e) {
+		if (e.which == 13) {
+			checkWord();
+		}
+	});
+
 	//called by cell click handler 
 	function letterClick(e) {
 		var el = $(e.target);
@@ -46,7 +52,6 @@ $(document).ready(function() {
 				backspace(el);
 				console.log('back it up')
 			} else if (!el.hasClass("active")) {
-				console.log('accepted!');
 				accept(el);
 			}
 			$('#letters').html(letters);

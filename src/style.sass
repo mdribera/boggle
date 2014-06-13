@@ -21,12 +21,17 @@ body
 		margin-left: auto
 		margin-right: auto
 		width: 600px
-		tr
-			td
-				padding: 10px
-			td:first-child
-				text-decoration: underline
+		#instructions
+			p, table
+				width: 50%
+				float: left
+			table
+				td
+					padding: 10px
+					&:first-child
+						text-decoration: underline
 		#board
+			clear: both
 			margin-left: auto
 			margin-right: auto
 			width: 500px
