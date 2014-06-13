@@ -1,29 +1,39 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  color: #333333; }
+  color: #bbbbbb;
+  background-color: #003300; }
+  body #alert {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px; }
+    body #alert p {
+      position: fixed;
+      display: none;
+      background-color: white;
+      color: black;
+      width: 200px;
+      border-radius: 4px;
+      text-align: center;
+      padding: 10px; }
   body .container {
     margin-left: auto;
     margin-right: auto;
     width: 600px; }
-    body .container tr {
-      border-top: 1px solid black; }
-      body .container tr td {
-        padding: 10px; }
-      body .container tr td:not(:first-child) {
-        border-left: 1px solid black; }
-      body .container tr td:first-child {
-        text-decoration: underline; }
+    body .container tr td {
+      padding: 10px; }
+    body .container tr td:first-child {
+      text-decoration: underline; }
     body .container #board {
       margin-left: auto;
       margin-right: auto;
       width: 500px;
       height: 500px;
       background-color: black; }
-      body .container #board .shelf {
+      body .container #board .row {
         width: 100%;
         height: 25%; }
-        body .container #board .shelf .cell {
+        body .container #board .row .cell {
           width: 25%;
           height: 100%;
           background-color: #555555;
@@ -36,10 +46,10 @@ body {
           color: white;
           line-height: 125px;
           font-size: 6em; }
-          body .container #board .shelf .cell:hover {
+          body .container #board .row .cell:hover {
             opacity: 1;
             background-color: #777777; }
-          body .container #board .shelf .cell.active {
+          body .container #board .row .cell.active {
             background-color: #00cc00; }
     body .container #controls, body .container #result {
       margin-left: 20px; }
@@ -47,19 +57,28 @@ body {
       display: inline-block;
       width: 100%;
       margin-top: 20px; }
-      body .container #controls #try, body .container #controls #letters {
-        float: left; }
-      body .container #controls #try {
-        cursor: pointer;
-        padding: 10px;
-        background-color: #dddddd;
-        border-radius: 4px; }
-      body .container #controls #letters {
-        margin-left: 20px;
-        font-size: 30px; }
-      body .container #controls #score {
-        float: right;
-        font-size: 30px; }
+      body .container #controls .fourth {
+        width: 25%; }
+      body .container #controls .half {
+        width: 50%; }
+      body .container #controls .fourth, body .container #controls .half {
+        float: left;
+        height: 40px; }
+        body .container #controls .fourth #try, body .container #controls .half #try {
+          cursor: pointer;
+          padding: 10px;
+          background-color: #dddddd;
+          color: black;
+          border-radius: 4px;
+          text-align: center; }
+          body .container #controls .fourth #try:hover, body .container #controls .half #try:hover {
+            opacity: 0.9; }
+        body .container #controls .fourth #letters, body .container #controls .half #letters {
+          font-size: 30px;
+          text-align: center; }
+        body .container #controls .fourth #score, body .container #controls .half #score {
+          font-size: 30px; }
     body .container #result {
       clear: both;
-      text-align: center; }
+      text-align: center;
+      height: 40px; }

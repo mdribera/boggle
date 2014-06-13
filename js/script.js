@@ -45,13 +45,13 @@ $(document).ready(function() {
 			if(el.attr('id') == lastSquareSelected()) {
 				backspace(el);
 				console.log('back it up')
-			} else {
+			} else if (!el.hasClass("active")) {
 				console.log('accepted!');
 				accept(el);
 			}
 			$('#letters').html(letters);
 		} else {
-			console.log('denied!');
+
 		}
 	}
 
@@ -101,15 +101,13 @@ $(document).ready(function() {
 	function checkWord() {
 		letters = String(letters.toLowerCase());
 		if ($.inArray(letters, words) > -1){
-			console.log('it is a word, congrats!');
-
 			if($.inArray(letters, used) == -1) {
 				inductWord();
 			} else {
-				console.log('but you already used it...');				
+				sendAlert('You already used that word.');				
 			}
 		} else {
-			console.log('that is not a word at all!');
+			sendAlert("That's not a word!");
 		}
 		restart();
 	}
@@ -136,6 +134,12 @@ $(document).ready(function() {
 		} else if (len == 8) {
 			return 11;
 		}
+	}
+
+	function sendAlert(text) {
+		$alert = $("#alert p");
+		$alert.html(text);
+		$alert.fadeIn(1000).delay(2000).fadeOut(1000);
 	}
 
 	//clears the board

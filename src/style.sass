@@ -1,17 +1,29 @@
 body
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
 	font-size: 14px
-	color: #333
+	color: #BBB
+	background-color: #030
+	#alert
+		margin-left: auto
+		margin-right: auto
+		width: 200px
+		p
+			position: fixed
+			display: none
+			background-color: #FFF
+			color: #000
+			width: 200px
+			// height: 40px
+			border-radius: 4px
+			text-align: center
+			padding: 10px
 	.container
 		margin-left: auto
 		margin-right: auto
 		width: 600px
 		tr
-			border-top: 1px solid black
 			td
 				padding: 10px
-			td:not(:first-child)
-				border-left: 1px solid black
 			td:first-child
 				text-decoration: underline
 		#board
@@ -21,7 +33,7 @@ body
 			height: 500px
 			background-color: black
 
-			.shelf
+			.row
 				width: 100%
 				height: 25%
 
@@ -50,20 +62,29 @@ body
 			display: inline-block
 			width: 100%
 			margin-top: 20px
+			.fourth
+				width: 25%
+			.half
+				width: 50%
 
-			#try, #letters
+			.fourth, .half
 				float: left
-			#try
-				cursor: pointer
-				padding: 10px
-				background-color: #DDD
-				border-radius: 4px
-			#letters
-				margin-left: 20px
-				font-size: 30px
-			#score
-				float: right
-				font-size: 30px
+				height: 40px
+				#try
+					cursor: pointer
+					padding: 10px
+					background-color: #DDD
+					color: #000
+					border-radius: 4px
+					text-align: center
+					&:hover
+						opacity: 0.9
+				#letters
+					font-size: 30px
+					text-align: center
+				#score
+					font-size: 30px
 		#result
 			clear: both
 			text-align: center
+			height: 40px
