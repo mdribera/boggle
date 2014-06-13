@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+  head
+    title Boggle
+    link(href='style.css', rel='stylesheet')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='script.js')
+  body
+    .container
+      h1 Boggle
+      p.
+        You get one point for 3 and 4 letter words.
+        Two points for 5 letter words.
+        Three points for 6 letter words, and so on.
+      p.
+        Click any letter to start!
+      #board
+        .shelf
+          .cell#0 S
+          .cell#1 E
+          .cell#2 R
+          .cell#3 S
+        .shelf
+          .cell#4 P
+          .cell#5 A
+          .cell#6 T
+          .cell#7 G
+        .shelf
+          .cell#8 L
+          .cell#9 I
+          .cell#10 N
+          .cell#11 E
+        .shelf
+          .cell#12 S
+          .cell#13 E
+          .cell#14 R
+          .cell#15 S
+      #controls
+        #try.btn.btn-default Try it.
+        #letters
+        #score 
+          span 0
+          |  points
+      #result
