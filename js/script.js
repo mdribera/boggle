@@ -6,7 +6,7 @@ $(document).ready(function() {
 	score = 0;
 
 	//populate the cells with configuration one or two
-	var config1 = ['s', 'e', 'r', 's', 'p', 'a', 't', 'g', 'l', 'i', 'n', 'e', 's', 'e', 'r', 's'],
+	var config1 = ['S', 'E', 'R', 'S', 'P', 'A', 'T', 'G', 'L', 'I', 'N', 'E', 'S', 'E', 'R', 'S'],
 	config2     = ['G', 'R', 'E', 'P', 'T', 'N', 'A', 'L', 'E', 'S', 'I', 'T', 'D', 'R', 'E', 'S'];
 	if(Math.floor(Math.random()*2)){
 		populate(config1);
@@ -115,17 +115,27 @@ $(document).ready(function() {
 	}
 
 	function inductWord() {
-		var wordlen = letters.length;
-		if(wordlen == 3) {
-			points = 1;
-		} else {
-			points = wordlen - 3
-		}
-		console.log(letters.length);
 		used.push(letters);
-		score += points;
+		score += calcPoints();
 		$('#score span').html(score);
 		$('#result').html(used.join(', '))
+	}
+
+	function calcPoints() {
+		var len = letters.length;
+		if(len < 3) {
+			return 0;
+		} else if (len == 3 || len == 4) {
+			return 1;
+		} else if (len == 5) {
+			return 2;
+		} else if (len == 6) {
+			return 3;
+		} else if (len == 7) {
+			return 5;
+		} else if (len == 8) {
+			return 11;
+		}
 	}
 
 	//clears the board

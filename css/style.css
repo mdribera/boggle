@@ -6,6 +6,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 600px; }
+    body .container tr {
+      border-top: 1px solid black; }
+      body .container tr td {
+        padding: 10px; }
+      body .container tr td:not(:first-child) {
+        border-left: 1px solid black; }
+      body .container tr td:first-child {
+        text-decoration: underline; }
     body .container #board {
       margin-left: auto;
       margin-right: auto;
