@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 	//populate the cells with configuration one or two
 	var config1 = ['s', 'e', 'r', 's', 'p', 'a', 't', 'g', 'l', 'i', 'n', 'e', 's', 'e', 'r', 's'],
-	config2 = ['t', 'e', 'o', 'v', 'l', 's', 'r', 'f', 'w', 'n', 'a', 'p', 'c', 'a', 'r', 'i'];
+	config2     = ['G', 'R', 'E', 'P', 'T', 'N', 'A', 'L', 'E', 'S', 'I', 'T', 'D', 'R', 'E', 'S'];
 	if(Math.floor(Math.random()*2)){
 		populate(config1);
 	} else {
